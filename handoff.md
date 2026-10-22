@@ -10,7 +10,7 @@ Ryan Pascal, Pell City, Alabama, is a free consumer advocate for car owners when
 
 ## Site status
 
-- One page, live from this repo's `main` branch through Porkbun static hosting with GitHub Connect.
+- One page, live at https://dealerpushback.com from this repo's `main` branch through Porkbun static hosting with GitHub Connect. Connected and confirmed serving the current version on October 21, 2026.
 - Plain HTML and CSS. No build step, no framework, no JavaScript.
 - Every push to `main` goes live. Use a `dev` branch for work in progress if needed.
 
@@ -24,13 +24,21 @@ Ryan Pascal, Pell City, Alabama, is a free consumer advocate for car owners when
 - All browsers: more word spacing in the large headlines, and `color-scheme: light only` so Samsung Internet and Android Chrome don't force their own dark mode onto the page.
 - Checked with no sideways scrolling at 320, 390 and 430 px phones, phone landscape, tablet and 1280 px desktop (Chromium). Not yet checked on a real iPhone in Safari.
 
+### Logo
+
+Design canvas (Ryan's claude.ai account): https://claude.ai/artifact/Nq4zw8YwDAZ6dsMrMZC6RT. Ryan also has the exported zip (SVG and PNG versions, icon, email signature HTML, usage README). Brand files the site uses are in `assets/img/brand/`.
+
 ### Still open
 
 1. Headline. Current draft: "The dealer said no. Let's put the facts in writing." Ryan hasn't approved it yet.
 2. Ryan to confirm the bio line: "I'm not a lawyer. Every decision is yours. I research the facts, put everything in writing, and make sure you're heard."
 3. Ryan to confirm the "How it works" steps and the contact paragraph (written by Claude, not in the original brief).
 4. Font: the plan named Switzer from Fontshare, but Fontshare couldn't be reached from the build environment, so the site uses Archivo (self-hosted, SIL Open Font License). Switching to Switzer would mean adding its woff2 files to `assets/fonts/` and updating the `@font-face` rule.
-5. Email setup for ryan@dealerpushback.com: SPF, DKIM and DMARC.
+5. Email for ryan@dealerpushback.com. DNS checked October 21, 2026:
+   - MX: fwd1.porkbun.com and fwd2.porkbun.com (Porkbun email forwarding). Incoming mail works.
+   - SPF: `v=spf1 include:_spf.porkbun.com ~all`. Only covers mail sent through Porkbun. If Ryan sends from Gmail or another service using this address, that service must be added to SPF or mail may land in spam.
+   - DKIM and DMARC: not set. The domain has a wildcard CNAME (`*` to ss1-sixie.porkbun.com) from the hosting setup, so lookups for `_dmarc` and `default._domainkey` return that hosting record instead of real email records. Real TXT records at those names will override the wildcard.
+   - Next: confirm which service sends as ryan@dealerpushback.com, add its DKIM record and SPF include, add a DMARC record (start with `v=DMARC1; p=none; rua=mailto:ryan@dealerpushback.com`), then send a test to a Gmail address and check SPF, DKIM and DMARC all show PASS under "Show original".
 6. Later: a site-style authorization form; an Alabama attorney's review of the site wording.
 
 ## Content rules
