@@ -31,7 +31,7 @@
   --section: clamp(4.5rem, 10vw, 8rem);
 
   --display: 600 clamp(2.75rem, 7.2vw, 5.75rem)/0.98 "Archivo", "Helvetica Neue", Arial, sans-serif;
-  --display-words: 0.05em;
+  --display-words: 0.08em;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -68,7 +68,7 @@ a:hover { text-decoration-thickness: 2px; }
   min-height: 4.25rem; flex-wrap: wrap;
 }
 .wordmark {
-  font-weight: 700; font-stretch: 85%; font-size: 1.1875rem; letter-spacing: -0.01em;
+  font-weight: 700; font-stretch: 85%; font-size: 1.1875rem; letter-spacing: -0.01em; word-spacing: 0.12em;
   text-decoration: none;
 }
 .top a.mail { font-size: 0.9375rem; color: var(--graphite); }
@@ -135,7 +135,7 @@ h1 {
 h2 {
   font-weight: 600; font-stretch: 88%;
   font-size: clamp(1.75rem, 3vw, 2.375rem);
-  line-height: 1.05; letter-spacing: -0.025em;
+  line-height: 1.05; letter-spacing: -0.025em; word-spacing: 0.1em;
   margin: 0;
 }
 .prose { max-width: var(--measure); }
@@ -145,7 +145,7 @@ h2 {
 /* The one marked line, and the page's one motion moment */
 .marked {
   font-size: clamp(1.3125rem, 2.1vw, 1.625rem) !important;
-  line-height: 1.45;
+  line-height: 1.6;
   color: var(--ink) !important;
   font-weight: 500;
   letter-spacing: -0.01em;
@@ -154,15 +154,15 @@ h2 {
 .marked span {
   background-image: linear-gradient(var(--mark), var(--mark));
   background-repeat: no-repeat;
-  background-size: 100% 88%;
-  background-position: 0 60%;
+  background-size: 100% 78%;
+  background-position: 0 70%;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   padding: 0 0.15em;
 }
 @media (prefers-reduced-motion: no-preference) {
-  .marked span { background-size: 0% 88%; animation: mark 1.1s cubic-bezier(.3,.7,.2,1) 0.5s forwards; }
-  @keyframes mark { to { background-size: 100% 88%; } }
+  .marked span { background-size: 0% 78%; animation: mark 1.1s cubic-bezier(.3,.7,.2,1) 0.5s forwards; }
+  @keyframes mark { to { background-size: 100% 78%; } }
 }
 
 /* What I do: a ledger */
@@ -239,18 +239,20 @@ h2 {
   /* Headline: tighter top, more air between words at phone sizes */
   .opening { padding: 2.5rem 0 0.5rem; }
   .opening .wrap { grid-template-columns: 1fr; align-items: start; gap: 2.25rem; }
-  h1, .band .statement, .contact h2 { font-size: clamp(2.5rem, 11.5vw, 3.25rem); letter-spacing: -0.03em; word-spacing: 0.06em; line-height: 1.02; }
+  h1, .band .statement, .contact h2 { font-size: clamp(2.5rem, 11.5vw, 3.25rem); letter-spacing: -0.03em; word-spacing: 0.16em; line-height: 1.02; }
   .opening .sub { font-size: 1.125rem; margin: 1.25rem 0 1.75rem; }
 
   /* Photo becomes a byline: small portrait beside name and title */
   .portrait {
-    display: grid; grid-template-columns: 6.5rem minmax(0, 1fr);
-    gap: 1rem; align-items: end; max-width: none;
+    display: grid; grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: 1rem; align-items: center; max-width: none;
   }
   .portrait figcaption {
     flex-direction: column; gap: 0.125rem;
-    margin: 0; padding: 0.625rem 0 0;
+    margin: 0; padding: 0; border-top: 0;
+    font-size: 1rem; font-weight: 600; color: var(--ink);
   }
+  .portrait figcaption span { font-weight: 400; }
 
   .row, .foot .wrap { grid-template-columns: 1fr; }
   .row { gap: 1rem; }
