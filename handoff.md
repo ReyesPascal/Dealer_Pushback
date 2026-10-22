@@ -14,6 +14,16 @@ Ryan Pascal, Pell City, Alabama, is a free consumer advocate for car owners when
 - Plain HTML and CSS. No build step, no framework, no JavaScript.
 - Every push to `main` goes live. Use a `dev` branch for work in progress if needed.
 
+### Changes on October 21, 2026 (evening)
+
+- Logo added. Wordmark is "Dealer Pushback" in Archivo 650, width 84%, with "Pushback" on a yellow highlighter swipe. Icon is "DP" on a highlighter bar inside an ink square; it drops to "D" at favicon size. Tagline, where used: "Free consumer advocacy for car owners."
+- The site header keeps the plain ink wordmark (no yellow), so the "I'm not a lawyer" line stays the only yellow on the page.
+- `favicon.svg` replaced with the new icon. Added `assets/img/brand/` (logo, icon, apple-touch icon, email signature icon) and an apple-touch-icon link.
+- The email signature loads `https://dealerpushback.com/assets/img/brand/email-signature-icon.png`. Don't move or rename that file.
+- Phone layout reworked (720px and below): the photo is now a small byline beside the name instead of a full-screen image, section spacing is tighter, headline sizes and word spacing are tuned, and the numbered steps use a narrower number column.
+- All browsers: more word spacing in the large headlines, and `color-scheme: light only` so Samsung Internet and Android Chrome don't force their own dark mode onto the page.
+- Checked with no sideways scrolling at 320, 390 and 430 px phones, phone landscape, tablet and 1280 px desktop (Chromium). Not yet checked on a real iPhone in Safari.
+
 ### Still open
 
 1. Headline. Current draft: "The dealer said no. Let's put the facts in writing." Ryan hasn't approved it yet.
@@ -51,6 +61,7 @@ robots.txt              search engines allowed
 assets/css/site.css     all styles; tokens at the top
 assets/fonts/           Archivo variable font + licence
 assets/img/             headshot, 480px and 960px, JPG and WebP
+assets/img/brand/       logo, icon and email-signature image
 handoff.md              this file
 DESIGN.md               design rules
 CLAUDE.md               points new sessions here
