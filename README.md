@@ -1,29 +1,36 @@
 # dealerpushback.com
 
-One-page static site for Dealer Pushback. Plain HTML and CSS: no build step, no framework, no JavaScript.
+A public **one-page, static** personal volunteer research website. Source only: no client intake, backend, analytics, advertisements, JavaScript or build pipeline. The public content is about careful repair documentation and manufacturer coverage review, not about any identifiable owner or incident.
 
-## Hosting
+## For Claude and other editors
+- **Read [CLAUDE.md](CLAUDE.md) first.** It describes boundaries, file ownership, quality checks and deployment.
+- Read [DESIGN.md](DESIGN.md) before changing page structure or appearance.
+- Read current `index.html` and `assets/css/site.css`, rather than an old screenshot or handoff. In particular, the current headline is *A diagnosis is not a coverage decision*.
+- Private owner records and case-specific strategy live elsewhere; this **public** repository must never include them.
 
-Porkbun static hosting with GitHub Connect. Porkbun serves the repo root as the site, so `index.html` must stay at the top level. A push to the connected branch (`main`) updates the live site.
+## Hosting and edits
+The site uses **Porkbun static hosting with GitHub Connect**, sourced from the repository root on the `main` branch. `index.html` is the entry point. A push to `main` is configured to update the host; separately verify propagation when possible.
 
-## Files
+| Path | Purpose |
+| --- | --- |
+| `index.html` | Full page content, metadata, structured headings and in-page navigation |
+| `404.html` | Static missing-page view using the same stylesheet |
+| `assets/css/site.css` | All design tokens, typography and responsive rules |
+| `assets/fonts/` | Self-hosted Archivo variable font and OFL license |
+| `assets/img/` | Actual portrait in 480/960 JPG/WebP sizes and branding assets |
+| `favicon.svg`, `robots.txt` | Static browser/search assets |
+| `DESIGN.md`, `CLAUDE.md` | Design specification and editing/operating instructions |
 
-```
-index.html                 the page
-404.html                   shown for missing pages
-favicon.svg                browser tab icon
-robots.txt                 lets search engines index the site
-assets/css/site.css        all styles
-assets/fonts/              Archivo variable font (self-hosted) and its licence
-assets/img/                headshot: 480px and 960px, JPG and WebP
-```
+No npm install, SSR, server functions, framework build, third-party fonts or runtime JS.
 
-## Editing
+## Editing and release checklist
+1. Verify explicit user authorization to modify/deploy this public site.
+2. Make content changes to `index.html` and styles to `assets/css/site.css`. If assets change, preserve original portrait identity and license details.
+3. Preserve exact **Always free** and no-benefit footer language, non-attorney disclosure, owner control, closure to new requests, and public confidentiality.
+4. Check desktop, tablet and phone layouts, including 1440/1024/768/390/320px; use the **real** photo assets for visual approval. Verify navigation/anchors, image sources, accessibility, overflow and accurate claims.
+5. Use meaningful commits. After pushing, read back `main` and confirm the actual changed files. Do not call a GitHub commit independent proof of the live Porkbun rendering.
 
-- Words: edit `index.html`. Keep the footer disclaimer as written.
-- Colours, spacing and type: the variables at the top of `assets/css/site.css`.
-- Yellow highlighter (`--mark`) is used in one place only: the "I'm not an attorney" line.
+**Previous revision warning:** older documentation mentioned a yellow animated attorney highlighter, a separate portrait overlay, the headline "Everything in writing" and the caption "Advocate". These describe **superseded designs**. Do not recreate them without new instruction.
 
-## Licences
-
-Archivo is licensed under the SIL Open Font License 1.1 (see `assets/fonts/ARCHIVO-OFL.txt`), which allows self-hosting on a business site.
+## Copyright and licenses
+Archivo: SIL Open Font License 1.1. See `assets/fonts/ARCHIVO-OFL.txt`. Retain existing font/image assets and credits as supplied.
