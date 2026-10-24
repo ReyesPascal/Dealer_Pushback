@@ -268,3 +268,6 @@ h2 {
   .foot { padding: 2rem 0 2.5rem; }
   .button { width: 100%; justify-content: center; }
 }
+
+/* Closed notice */
+.closed-note { margin: 0; font-weight: 500; color: var(--ink); max-width: 32rem; }
