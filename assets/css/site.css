@@ -179,6 +179,15 @@ h2 {
 }
 .ledger p { margin: 0; color: var(--graphite); max-width: 34rem; }
 
+/* A short three-part accountability map. Keeps the paper/ink visual language. */
+.section + .division { padding-top: clamp(2.5rem, 5vw, 4rem); }
+.section-heading { max-width: 36rem; margin-bottom: clamp(2rem, 4vw, 3rem); }
+.division-closing {
+  max-width: 44rem; border-top: 1px solid var(--hairline);
+  padding-top: 1.25rem; margin: 2.75rem 0 0;
+  color: var(--graphite); font-size: 1.0625rem;
+}
+
 /* Always free: the one dark band */
 .band { background: var(--band); color: var(--band-text); }
 .band .wrap { padding-top: var(--section); padding-bottom: var(--section); }
