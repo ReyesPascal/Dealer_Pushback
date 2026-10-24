@@ -64,7 +64,12 @@ h1 { margin: 0; max-width: 12ch; text-wrap: balance; }
 .opening .sub { max-width: 34rem; font-size: clamp(1.1875rem, 1.65vw, 1.375rem); line-height: 1.53; color: var(--graphite); margin: 2rem 0 2.1rem; }
 .hero-rule { max-width: 34rem; border-top: 1px solid var(--ink); padding-top: 1.15rem; margin: 0; font-size: 0.975rem; font-weight: 600; line-height: 1.45; letter-spacing: -0.006em; }
 .portrait { margin: 0; }
-.portrait img { width: 100%; aspect-ratio: 4/5; object-fit: cover; height: auto; background: #E5E5E1; }
+.portrait img {
+  width: 100%; aspect-ratio: 4/5; object-fit: cover; height: auto;
+  mix-blend-mode: multiply;
+  -webkit-mask-image: radial-gradient(ellipse 89% 91% at 50% 37%, black 51%, transparent 100%);
+  mask-image: radial-gradient(ellipse 89% 91% at 50% 37%, black 51%, transparent 100%);
+}
 .portrait figcaption { display: flex; justify-content: space-between; gap: 1rem; margin-top: 0.9rem; padding-top: 0.68rem; border-top: 1px solid var(--ink); font-size: 0.9375rem; font-weight: 600; line-height: 1.35; }
 .portrait figcaption span { color: var(--quiet); font-weight: 400; }
 
