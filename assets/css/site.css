@@ -71,7 +71,7 @@ a:hover { text-decoration-thickness: 2px; }
   font-weight: 700; font-stretch: 85%; font-size: 1.1875rem; letter-spacing: -0.01em; word-spacing: 0.12em;
   text-decoration: none;
 }
-.top a.mail { font-size: 0.9375rem; color: var(--graphite); }
+.top .status { font-size: 0.9375rem; color: var(--graphite); }
 
 /* Opening */
 .opening { padding: clamp(3.5rem, 8vw, 6.5rem) 0 clamp(1rem, 3vw, 2rem); }
@@ -233,7 +233,7 @@ h2 {
 @media (max-width: 720px) {
   :root { --section: 3.5rem; }
   body { font-size: 1.0625rem; }
-  .top a.mail { display: none; }
+  .top .status { font-size: 0.875rem; }
   .top .wrap { min-height: 3.5rem; }
 
   /* Headline: tighter top, more air between words at phone sizes */
@@ -270,4 +270,7 @@ h2 {
 }
 
 /* Closed notice */
-.closed-note { margin: 0; font-weight: 500; color: var(--ink); max-width: 32rem; }
+.closed-note { margin: 0; padding-top: 1.25rem; border-top: 1px solid var(--ink); font-weight: 500; color: var(--ink); max-width: 32rem; }
+.note-ref { font-size: 0.7em; line-height: 0; }
+.note-ref a { text-decoration: none; }
+.foot .fine + .fine { margin-top: 0.75rem; }

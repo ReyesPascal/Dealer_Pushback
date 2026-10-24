@@ -22,7 +22,7 @@ assets/img/                headshot: 480px and 960px, JPG and WebP
 
 - Words: edit `index.html`. Keep the footer disclaimer as written.
 - Colours, spacing and type: the variables at the top of `assets/css/site.css`.
-- Yellow highlighter (`--mark`) is used in one place only: the "I'm not a lawyer" line.
+- Yellow highlighter (`--mark`) is used in one place only: the "I'm not an attorney" line.
 
 ## Licences
 

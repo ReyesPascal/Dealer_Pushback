@@ -32,7 +32,7 @@ The style blends three Refero design systems (styles.refero.design), structure o
 
 ## Rules
 
-- Yellow is only ever a background behind black text, and appears once: the "I'm not a lawyer" line.
+- Yellow is only ever a background behind black text, and appears once: the "I'm not an attorney" line.
 - One motion moment: the highlighter sweeps across that line once on load. Off when the device asks for reduced motion. Nothing else moves.
 - Text is left-aligned. No centered hero, pill badges, logo rows, three floating feature cards or "Most popular" badges.
 - No gradients, glass blur, glows, drop shadows, or a soft rounded card used everywhere.
