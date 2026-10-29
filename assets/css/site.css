@@ -27,7 +27,6 @@ img{display:block;max-width:100%}
 
 .hero{overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.82fr);gap:clamp(30px,6vw,90px);align-items:center;padding-top:clamp(40px,5vw,72px);padding-bottom:var(--section)}
-.eyebrow{text-transform:uppercase;font-size:12px;font-weight:600;letter-spacing:.16em;line-height:1.5;margin:0 0 25px;color:var(--faint)}
 h1{font-size:clamp(52px,5.4vw,80px);line-height:1.02;letter-spacing:-.05em;font-weight:520;max-width:750px;margin:0 0 32px}
 h1 em{font-style:normal;color:var(--cobalt-text)}
 .hero-lede{max-width:600px;font-size:clamp(19px,1.5vw,21px);line-height:1.55;letter-spacing:-.01em;color:var(--muted);margin:0}
@@ -67,14 +66,18 @@ h3{font-size:21px;font-weight:600;letter-spacing:-.02em;line-height:1.25;margin:
 
 .footer{padding:0 0 28px}
 .footer-inner{display:flex;flex-direction:column;gap:6px}
-.footer p{margin:0;color:var(--faint);font-size:12px;line-height:1.55;max-width:1100px}
-.footer .copyright{font-size:11px}
+.footer p{margin:0;color:var(--faint);font-size:13px;line-height:1.6;max-width:1100px}
+.footer .copyright{font-size:12px}
+.hero-copy{padding:clamp(32px,6vw,72px) 0}
 
 @media(max-width:1000px){
  .hero-grid{grid-template-columns:minmax(0,1.2fr) minmax(240px,.8fr);gap:36px}
  h1{font-size:clamp(48px,6vw,66px)}
  .split-layout,.closed-grid{grid-template-columns:minmax(0,250px) minmax(0,1fr);gap:40px}
- .question{padding:26px}
+ .question-grid{grid-template-columns:1fr;row-gap:var(--gap)}
+ .question{grid-row:auto;grid-template-rows:none;grid-template-columns:44px minmax(0,1fr) minmax(0,1.5fr);column-gap:24px;align-items:baseline;padding:26px}
+ .question .number{margin:0}
+ .question h3{margin:0}
 }
 @media(max-width:720px){
  :root{--gutter:20px;--card-pad:22px;--section:56px}
@@ -108,7 +111,7 @@ h3{font-size:21px;font-weight:600;letter-spacing:-.02em;line-height:1.25;margin:
  .closed-grid{padding:36px 24px}
  .closed-section h2{font-size:clamp(30px,8.5vw,42px);margin-bottom:14px}
  .closed-section p{font-size:16px}
- .footer p{font-size:11px}
+ .footer p{font-size:12px}
 }
 @media(max-width:360px){:root{--gutter:16px}.wordmark img{height:24px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
