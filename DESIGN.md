@@ -53,3 +53,18 @@ Headlines stay medium weight. Don't go back to 700+ heavy display type.
 - **Emphasis block:** `--raised` fill, 12px radius, inside the page width. Only one per page.
 - **Header:** wordmark left, tagline right, no bar or border.
 - **Footer:** plain text in `--faint` on the canvas.
+
+## Brand marks
+
+All in `assets/img/brand/` (favicon at the site root). Text is outlined from Archivo, so the files need no font.
+
+| File | Use |
+|---|---|
+| `icon.svg` | Cobalt `#5266eb` tile, 22% corner radius, white "DP" at weight 640 |
+| `favicon.svg` | Same tile at 32px with larger letters so "DP" reads at 16px |
+| `logo-primary.svg` | Tile plus "Dealer Pushback" in `#ededf3`, for dark backgrounds |
+| `logo-on-light.svg` | Same with the wordmark in `#171721`, for light backgrounds |
+| `apple-touch-icon.png` | 180px square, no rounding (iOS rounds it) |
+| `icon-512.png`, `email-signature-icon.png` | Rounded tile at 512px and 104px |
+
+The tile is cobalt rather than canvas dark so it stays visible in both light and dark browser tabs.
