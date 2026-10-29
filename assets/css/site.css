@@ -1,5 +1,5 @@
 /* Dealer Pushback: dark, calm, one cobalt accent. Built from DESIGN.md. Static hosting only. */
-@font-face { font-family: Archivo; src:url('../fonts/archivo-latin-variable.woff2') format('woff2'); font-style:normal; font-weight:100 900; font-display:swap; }
+@font-face { font-family: Archivo; src:url('../fonts/archivo-latin-variable.woff2') format('woff2'); font-style:normal; font-weight:100 900; font-stretch:62% 125%; font-display:swap; }
 :root {
   color-scheme:dark;
   /* Surfaces: canvas and band alternate by section; cards sit one step above their section. */
@@ -25,13 +25,11 @@ img,svg{display:block;max-width:100%}
 .skip-link{position:absolute;left:-100vw;top:0;z-index:20;background:var(--cobalt);color:#fff;padding:12px 18px;border-radius:var(--radius-pill)}
 .skip-link:focus{left:12px;top:12px}
 
-/* Header: sticky frosted bar in the band shade. Logo left, status right. No links besides home. */
+/* Header: sticky frosted bar in the band shade. Logo only. No links besides home. */
 .site-header{position:sticky;top:0;z-index:10;background:rgba(28,28,39,.82);-webkit-backdrop-filter:saturate(140%) blur(14px);backdrop-filter:saturate(140%) blur(14px)}
 .header-inner{height:var(--header);display:flex;align-items:center;justify-content:space-between;gap:20px}
 .wordmark{display:block;line-height:0;flex:0 0 auto}
 .wordmark img{height:46px;width:auto}
-.status{display:inline-flex;align-items:center;gap:9px;margin:0;padding:8px 14px 8px 12px;border-radius:var(--radius-pill);background:var(--card-on-band);color:var(--muted);font-size:14px;font-weight:550;line-height:1;white-space:nowrap}
-.status-dot{width:8px;height:8px;border-radius:50%;background:var(--faint);box-shadow:0 0 0 3px rgba(169,169,183,.18)}
 
 /* Sections alternate canvas and band so each one reads as its own block. */
 .section-block{padding:var(--section) 0}
@@ -57,9 +55,11 @@ h1 em{font-style:normal;color:var(--cobalt-text)}
 .hero-person picture{display:block;width:100%}
 .hero-person img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
 .hero-person figcaption{position:relative;margin-top:-56px;padding:0 4px;line-height:1.4;text-align:center}
-.hero-person figcaption strong{display:block;font-size:18px;font-weight:600;letter-spacing:-.01em}
-.hero-person figcaption .caption-role{display:block;margin-top:6px;color:var(--faint);text-transform:uppercase;font-size:13px;font-weight:600;letter-spacing:.14em}
-.caption-role span+span::before{content:"\00b7";display:inline-block;margin:0 .5em 0 .36em;letter-spacing:0}
+/* Name: the logo's condensed caps, surname in cobalt like "PUSHBACK". Roles split by small cobalt squares (the logo tile). */
+.person-name{display:block;font-size:26px;line-height:1;font-weight:760;font-stretch:75%;letter-spacing:.02em;text-transform:uppercase}
+.person-name span{color:var(--cobalt-text)}
+.hero-person figcaption .caption-role{display:block;margin-top:9px;color:var(--faint);text-transform:uppercase;font-size:13px;font-weight:650;font-stretch:75%;letter-spacing:.08em}
+.caption-role span+span::before{content:"";display:inline-block;width:5px;height:5px;margin:0 .7em .18em;border-radius:1px;background:var(--cobalt);vertical-align:middle}
 
 /* Section headings: centered over their grids. */
 .section-heading{max-width:780px;margin:0 auto 48px;text-align:center}
@@ -97,14 +97,12 @@ h3{font-size:22px;font-weight:620;letter-spacing:-.02em;line-height:1.25;margin:
  .question{grid-row:auto;grid-template-rows:none;grid-template-columns:32px minmax(0,1fr) minmax(0,1.5fr);column-gap:24px;align-items:start;padding:26px}
  .question .number{margin:0}
  .question h3{margin:3px 0 0}
- .hero-person figcaption .caption-role{font-size:12px;letter-spacing:.1em}
+ .hero-person figcaption .caption-role{font-size:12px}
 }
 @media(max-width:720px){
  :root{--gutter:20px;--card-pad:22px;--section:56px;--gap:12px;--header:64px}
  body{font-size:17px}
  .wordmark img{height:34px}
- .status{font-size:13px;padding:7px 12px 7px 10px}
- .status-long{display:none}
  .hero-grid{display:block;padding-top:32px;padding-bottom:var(--section)}
  h1{font-size:clamp(40px,11vw,60px);line-height:1.05;margin-bottom:18px}
  .hero-lede{font-size:19px;margin-bottom:26px}
@@ -116,8 +114,8 @@ h3{font-size:22px;font-weight:620;letter-spacing:-.02em;line-height:1.25;margin:
  .hero-person picture{width:112px;flex:0 0 112px}
  .hero-person img{width:112px;height:140px}
  .hero-person figcaption{flex:1;min-width:0;margin:0;padding:0;text-align:left}
- .hero-person figcaption strong{font-size:18px}
- .hero-person figcaption .caption-role{font-size:12px;letter-spacing:.12em;line-height:1.6}
+ .person-name{font-size:24px}
+ .hero-person figcaption .caption-role{font-size:13px;letter-spacing:.08em;line-height:1.6}
  .caption-role span{display:block}
  .caption-role span+span::before{content:none}
  .section-heading{margin-bottom:28px}
