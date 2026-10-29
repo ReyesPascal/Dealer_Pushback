@@ -37,7 +37,7 @@ img,svg{display:block;max-width:100%}
 
 /* Hero */
 .hero{overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.75fr);gap:clamp(36px,6vw,96px);align-items:center;padding-top:clamp(40px,5vw,72px);padding-bottom:var(--section)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.75fr);gap:clamp(36px,6vw,96px);align-items:start;padding-top:clamp(40px,5vw,72px);padding-bottom:var(--section)}
 h1{font-size:clamp(50px,5.2vw,76px);line-height:1.03;letter-spacing:-.045em;font-weight:540;max-width:720px;margin:0 0 24px;text-wrap:balance}
 h1 em{font-style:normal;color:var(--cobalt-text)}
 .hero-lede{max-width:30em;font-size:clamp(20px,1.6vw,23px);line-height:1.5;color:var(--text);margin:0 0 32px;text-wrap:pretty}
@@ -47,6 +47,13 @@ h1 em{font-style:normal;color:var(--cobalt-text)}
 .review-list li{display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;border-radius:12px;background:var(--card);color:var(--text);font-size:16px;font-weight:560;line-height:1.2}
 .review-list svg{width:22px;height:22px;flex:0 0 22px;fill:none;stroke:var(--cobalt-text);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
+/* Hero copy starts level with the top of the head in the portrait. */
+.hero-grid>.hero-copy{padding:0;margin-top:3px}
+/* Process stepper: numbered cobalt tiles joined by a thin line, names underneath. */
+.stepper{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));margin:36px 0 0;padding:0;list-style:none;max-width:600px}
+.stepper::before{content:"";position:absolute;left:10%;right:10%;top:15px;height:2px;background:var(--cobalt);opacity:.55}
+.stepper li{position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 4px;text-align:center}
+.stepper-label{font-size:13.5px;font-weight:620;line-height:1.25;color:var(--text);text-wrap:balance}
 /* Portrait: transparent cutout that fades into the canvas, lit by a soft cobalt glow. No frame. */
 .hero-person{position:relative;isolation:isolate;margin:0;min-width:0;max-width:420px;justify-self:end;width:100%}
 .hero-person::before{content:"";position:absolute;z-index:-1;left:-14%;right:-14%;top:-8%;height:92%;background:radial-gradient(closest-side at 55% 42%,rgba(82,102,235,.36),rgba(82,102,235,.14) 55%,rgba(82,102,235,0) 100%);pointer-events:none}
@@ -112,6 +119,9 @@ h3{font-size:22px;font-weight:620;letter-spacing:-.02em;line-height:1.25;margin:
  .hero-grid{display:block;padding-top:32px;padding-bottom:var(--section)}
  h1{font-size:clamp(40px,11vw,60px);line-height:1.05;margin-bottom:18px}
  .hero-lede{font-size:19px;margin-bottom:26px}
+ .hero-grid>.hero-copy{margin-top:0}
+ .stepper{margin-top:28px}
+ .stepper-label{font-size:12.5px}
  .hero-person{display:flex;gap:16px;align-items:center;max-width:none;margin-top:36px}
  .hero-person::before{left:-18px;right:auto;top:-14px;width:148px;height:150px;background:radial-gradient(closest-side at 52% 42%,rgba(82,102,235,.38),rgba(82,102,235,.12) 60%,rgba(82,102,235,0) 100%)}
  .hero-person picture{width:112px;flex:0 0 112px}

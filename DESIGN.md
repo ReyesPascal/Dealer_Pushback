@@ -62,6 +62,8 @@ Line breaks: headings use `text-wrap: balance`; card, step and footer paragraphs
 - **Question cards:** a three-column grid using subgrid, so numbers, headings and answers start on the same line in every card. Keep answers about the same length.
 - **Section heading:** centered over its grid, `text-wrap: balance`. The process section carries one eyebrow above its heading: "Evidence first. Conclusions second." in uppercase `--cobalt-text`.
 - **Process steps:** 2 × 2 grid of cards (one column on phones), number in a 32px left column.
+- **Process stepper:** under the chips, five 32px numbered cobalt tiles (01–05) joined by a 2px cobalt connector at 55% opacity (the one allowed line, since it shows sequence rather than dividing content), with names underneath: Prepare, Engage, Identify the obstacle, Adapt the approach, Seek a documented resolution. Only the step names go on the site.
+- **Hero alignment:** the hero grid is top-aligned, so the headline's cap height sits level with the top of the head in the portrait (within about 3px).
 - **Hero copy:** headline, one-sentence lede in `--text`, then three chips (icon + label: Repair records, Coverage rules, Past messages) on `--card`. From tablet width down the chips become three equal columns with the icon above the label.
 - **Header:** sticky, frosted band (`rgba(28,28,39,.82)` + 14px backdrop blur), 80px tall (64px phones). Logo left at 46px (34px phones, 30px under 360px). Nothing on the right. No navigation links.
 - **Footer:** compact band (28px/24px padding). Two columns: legal disclaimer (13px) and copyright (12px) on the left in `--faint`; the "Closed to new requests." notice on the right (15px heading in `--text`, 13px body in `--muted`). On phones they stack with the notice first.
