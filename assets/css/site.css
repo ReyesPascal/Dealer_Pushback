@@ -41,12 +41,15 @@ img{display:block;max-width:100%}
 h1{font-size:clamp(50px,5.2vw,76px);line-height:1.03;letter-spacing:-.045em;font-weight:540;max-width:720px;margin:0 0 28px}
 h1 em{font-style:normal;color:var(--cobalt-text)}
 .hero-lede{max-width:34em;font-size:clamp(19px,1.45vw,21px);line-height:1.6;color:var(--muted);margin:0}
-.hero-person{margin:0;min-width:0;max-width:400px;justify-self:end;width:100%}
+/* Portrait: transparent cutout that fades into the canvas, lit by a soft cobalt glow. No frame. */
+.hero-person{position:relative;isolation:isolate;margin:0;min-width:0;max-width:420px;justify-self:end;width:100%}
+.hero-person::before{content:"";position:absolute;z-index:-1;left:-14%;right:-14%;top:-8%;height:92%;background:radial-gradient(closest-side at 55% 42%,rgba(82,102,235,.36),rgba(82,102,235,.14) 55%,rgba(82,102,235,0) 100%);pointer-events:none}
 .hero-person picture{display:block;width:100%}
-.hero-person img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--radius-photo);background:var(--cobalt-deep)}
-.hero-person figcaption{padding:18px 4px 0;line-height:1.4}
+.hero-person img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.hero-person figcaption{position:relative;margin-top:-56px;padding:0 4px;line-height:1.4;text-align:center}
 .hero-person figcaption strong{display:block;font-size:18px;font-weight:600;letter-spacing:-.01em}
 .hero-person figcaption .caption-role{display:block;margin-top:6px;color:var(--faint);text-transform:uppercase;font-size:13px;font-weight:600;letter-spacing:.14em}
+.caption-role span+span::before{content:"\00b7";display:inline-block;margin:0 .5em 0 .36em;letter-spacing:0}
 
 /* Shared type */
 .section-heading{margin-bottom:40px}
@@ -90,6 +93,7 @@ h3{font-size:22px;font-weight:620;letter-spacing:-.02em;line-height:1.25;margin:
  .question{grid-row:auto;grid-template-rows:none;grid-template-columns:32px minmax(0,1fr) minmax(0,1.5fr);column-gap:24px;align-items:start;padding:26px}
  .question .number{margin:0}
  .question h3{margin:3px 0 0}
+ .hero-person figcaption .caption-role{font-size:12px;letter-spacing:.1em}
 }
 @media(max-width:720px){
  :root{--gutter:20px;--card-pad:22px;--section:56px;--gap:12px}
@@ -101,11 +105,14 @@ h3{font-size:22px;font-weight:620;letter-spacing:-.02em;line-height:1.25;margin:
  h1{font-size:clamp(40px,11vw,60px);line-height:1.05;margin-bottom:20px}
  .hero-lede{font-size:18px}
  .hero-person{display:flex;gap:16px;align-items:center;max-width:none;margin-top:32px}
- .hero-person picture{width:88px;flex:0 0 88px}
- .hero-person img{width:88px;height:88px;aspect-ratio:auto;object-position:50% 20%;border-radius:18px}
- .hero-person figcaption{flex:1;min-width:0;padding:0}
+ .hero-person::before{left:-18px;right:auto;top:-14px;width:148px;height:150px;background:radial-gradient(closest-side at 52% 42%,rgba(82,102,235,.38),rgba(82,102,235,.12) 60%,rgba(82,102,235,0) 100%)}
+ .hero-person picture{width:112px;flex:0 0 112px}
+ .hero-person img{width:112px;height:140px}
+ .hero-person figcaption{flex:1;min-width:0;margin:0;padding:0;text-align:left}
  .hero-person figcaption strong{font-size:18px}
- .hero-person figcaption .caption-role{font-size:12px;letter-spacing:.12em}
+ .hero-person figcaption .caption-role{font-size:12px;letter-spacing:.12em;line-height:1.6}
+ .caption-role span{display:block}
+ .caption-role span+span::before{content:none}
  .section-heading{margin-bottom:24px}
  h2,.closed-section h2{font-size:clamp(30px,8vw,38px)}
  h3{font-size:20px}

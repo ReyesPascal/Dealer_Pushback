@@ -54,7 +54,7 @@ Nothing on the page is smaller than 12px. Body paragraphs cap at 62 characters p
 
 - **Sections:** alternate `--canvas` and `--band` backgrounds (hero canvas, questions band, process canvas, closure band). This is the only section separator.
 - **Card:** `--card` (or `--card-on-band`) fill, 14px radius, no border. Used for the three questions and the process steps.
-- **Portrait:** cut out from its original background and placed on `--cobalt-deep` with a soft lighter glow behind the head. 24px radius, no frame. Square crop with 18px radius on phones.
+- **Portrait:** a transparent cutout (hair and beard edges keyed strand by strand from the original gray backdrop) that fades into the canvas at the shoulders, lit from above so the body falls into shadow. No frame or box: a soft cobalt radial glow (`.hero-person::before`) sits behind the head, and the name overlaps the faded shoulders. Served as WebP with transparency; the JPEG fallback (also the social preview image) has the glow baked in. On phones it shrinks to 112px beside the name with a smaller glow, and the three roles stack.
 - **Step number:** 32px cobalt tile with a white number, echoing the logo mark.
 - **Question cards:** a three-column grid using subgrid, so numbers, headings and answers start on the same line in every card. Keep answers about the same length.
 - **Process step:** card with the number in a 40px left column.
