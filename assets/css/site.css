@@ -53,7 +53,7 @@ h1 em{font-style:normal;color:var(--cobalt-text)}
 .hero-person picture{display:block;width:100%}
 .hero-person img{width:100%;height:auto;aspect-ratio:480/545;object-fit:cover;object-position:50% 0}
 /* Caption centered under the hair below the lower lip, ~10.6% right of the frame center (head turned slightly). */
-.hero-person figcaption{position:relative;left:10.6%;margin-top:14px;padding:0 4px;line-height:1.4;text-align:center}
+.hero-person figcaption{position:relative;left:10.6%;margin-top:40px;padding:0 4px;line-height:1.4;text-align:center}
 /* Name: the logo's condensed caps, surname in cobalt like "PUSHBACK". Roles split by small cobalt squares (the logo tile). */
 .person-name{display:block;font-size:30px;line-height:1;font-weight:760;font-stretch:75%;letter-spacing:.02em;text-transform:uppercase}
 .person-name span{color:var(--cobalt-text)}
