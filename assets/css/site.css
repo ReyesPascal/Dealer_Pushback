@@ -44,21 +44,20 @@ h1 em{font-style:normal;color:var(--cobalt-text)}
 /* What I review: three chips between a short label and the outcome line. */
 .review{max-width:560px}
 .review-label{margin:0 0 12px;color:var(--faint);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
-.review-list{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px;padding:0;list-style:none}
+.review-list{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
 .review-list li{display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;border-radius:12px;background:var(--card);color:var(--text);font-size:16px;font-weight:560;line-height:1.2}
 .review-list svg{width:22px;height:22px;flex:0 0 22px;fill:none;stroke:var(--cobalt-text);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.review-outcome{margin:0;color:var(--muted);font-size:17px;line-height:1.55;text-wrap:pretty}
 
 /* Portrait: transparent cutout that fades into the canvas, lit by a soft cobalt glow. No frame. */
 .hero-person{position:relative;isolation:isolate;margin:0;min-width:0;max-width:420px;justify-self:end;width:100%}
 .hero-person::before{content:"";position:absolute;z-index:-1;left:-14%;right:-14%;top:-8%;height:92%;background:radial-gradient(closest-side at 55% 42%,rgba(82,102,235,.36),rgba(82,102,235,.14) 55%,rgba(82,102,235,0) 100%);pointer-events:none}
 .hero-person picture{display:block;width:100%}
-.hero-person img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
-.hero-person figcaption{position:relative;margin-top:-56px;padding:0 4px;line-height:1.4;text-align:center}
+.hero-person img{width:100%;height:auto;aspect-ratio:480/545;object-fit:cover;object-position:50% 0}
+.hero-person figcaption{position:relative;margin-top:14px;padding:0 4px;line-height:1.4;text-align:center}
 /* Name: the logo's condensed caps, surname in cobalt like "PUSHBACK". Roles split by small cobalt squares (the logo tile). */
-.person-name{display:block;font-size:26px;line-height:1;font-weight:760;font-stretch:75%;letter-spacing:.02em;text-transform:uppercase}
+.person-name{display:block;font-size:30px;line-height:1;font-weight:760;font-stretch:75%;letter-spacing:.02em;text-transform:uppercase}
 .person-name span{color:var(--cobalt-text)}
-.hero-person figcaption .caption-role{display:block;margin-top:9px;color:var(--faint);text-transform:uppercase;font-size:13px;font-weight:650;font-stretch:75%;letter-spacing:.08em}
+.hero-person figcaption .caption-role{display:block;margin-top:11px;color:var(--faint);text-transform:uppercase;font-size:13px;font-weight:650;font-stretch:75%;letter-spacing:.08em}
 .caption-role span+span::before{content:"";display:inline-block;width:5px;height:5px;margin:0 .7em .18em;border-radius:1px;background:var(--cobalt);vertical-align:middle}
 
 /* Section headings: centered over their grids. */
@@ -98,6 +97,8 @@ h3{font-size:22px;font-weight:620;letter-spacing:-.02em;line-height:1.25;margin:
  .question .number{margin:0}
  .question h3{margin:3px 0 0}
  .hero-person figcaption .caption-role{font-size:12px}
+ .review-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+ .review-list li{flex-direction:column;justify-content:center;gap:8px;padding:14px 6px 12px;font-size:14px;text-align:center}
 }
 @media(max-width:720px){
  :root{--gutter:20px;--card-pad:22px;--section:56px;--gap:12px;--header:64px}
@@ -106,9 +107,6 @@ h3{font-size:22px;font-weight:620;letter-spacing:-.02em;line-height:1.25;margin:
  .hero-grid{display:block;padding-top:32px;padding-bottom:var(--section)}
  h1{font-size:clamp(40px,11vw,60px);line-height:1.05;margin-bottom:18px}
  .hero-lede{font-size:19px;margin-bottom:26px}
- .review-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
- .review-list li{flex-direction:column;justify-content:center;gap:8px;padding:14px 6px 12px;font-size:14px;text-align:center}
- .review-outcome{font-size:16px}
  .hero-person{display:flex;gap:16px;align-items:center;max-width:none;margin-top:36px}
  .hero-person::before{left:-18px;right:auto;top:-14px;width:148px;height:150px;background:radial-gradient(closest-side at 52% 42%,rgba(82,102,235,.38),rgba(82,102,235,.12) 60%,rgba(82,102,235,0) 100%)}
  .hero-person picture{width:112px;flex:0 0 112px}
