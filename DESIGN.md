@@ -79,3 +79,14 @@ All in `assets/img/brand/` (favicon at the site root). Letters are outlined from
 | `icon-512.png`, `email-signature-icon.png` | Rounded mark at 512px and 104px |
 
 When the logo changes, bump the `?v=` on its references in `index.html` and `404.html` so browsers fetch the new file.
+
+## Cache busting
+
+`site.css` is referenced with `?v=` set to the first 10 characters of its SHA-256. After any CSS edit, run:
+
+```
+H=$(sha256sum assets/css/site.css | cut -c1-10)
+sed -i -E "s/site\.css\?v=[A-Za-z0-9]+/site.css?v=$H/" index.html 404.html
+```
+
+Then grep both files to confirm the new tag is there. Never bump versions with a broad find-and-replace like `?v=2` → `?v=3`, which can also hit the stylesheet tag.
