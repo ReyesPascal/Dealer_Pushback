@@ -60,7 +60,7 @@ Nothing on the page is smaller than 12px. Body paragraphs cap at 62 characters p
 - **Section heading:** centered over its grid, `text-wrap: balance`. The process section carries one eyebrow above its heading: "Evidence first. Conclusions second." in uppercase `--cobalt-text`.
 - **Process steps:** 2 × 2 grid of cards (one column on phones), number in a 32px left column.
 - **Hero copy:** headline, one-sentence lede in `--text`, then a "What I review" group: small uppercase label "I look through", three chips (icon + label: Repair records, Coverage rules, Past messages) on `--card`, and the outcome line in `--muted`. On phones the chips become three equal columns with the icon above the label.
-- **Header:** sticky, frosted band (`rgba(28,28,39,.82)` + 14px backdrop blur), 80px tall (64px phones). Logo left at 46px (34px phones, 30px under 360px). Right: a status pill (gray dot, "Closed to new requests", shortened to "Closed" on phones). No navigation links.
+- **Header:** sticky, frosted band (`rgba(28,28,39,.82)` + 14px backdrop blur), 80px tall (64px phones). Logo left at 46px (34px phones, 30px under 360px). Nothing on the right. No navigation links.
 - **Footer:** compact band (28px/24px padding). Two columns: legal disclaimer (13px) and copyright (12px) on the left in `--faint`; the "Closed to new requests." notice on the right (15px heading in `--text`, 13px body in `--muted`). On phones they stack with the notice first.
 
 ## Brand marks
