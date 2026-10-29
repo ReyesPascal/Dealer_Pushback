@@ -55,16 +55,19 @@ h1 em{font-style:normal;color:var(--cobalt-text)}
 .stepper li{position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 4px;text-align:center}
 .stepper-label{font-size:13.5px;font-weight:620;line-height:1.25;color:var(--text);text-wrap:balance}
 /* Portrait: transparent cutout that fades into the canvas, lit by a soft cobalt glow. No frame. */
-.hero-person{position:relative;isolation:isolate;margin:0;min-width:0;max-width:420px;justify-self:end;width:100%}
+/* Raised 16px so the round crown overshoots the headline's cap line: optically level. */
+.hero-person{position:relative;isolation:isolate;margin:-16px 0 0;min-width:0;max-width:420px;justify-self:end;width:100%}
 .hero-person::before{content:"";position:absolute;z-index:-1;left:-14%;right:-14%;top:-8%;height:92%;background:radial-gradient(closest-side at 55% 42%,rgba(82,102,235,.36),rgba(82,102,235,.14) 55%,rgba(82,102,235,0) 100%);pointer-events:none}
 .hero-person picture{display:block;width:100%}
 .hero-person img{width:100%;height:auto;aspect-ratio:480/545;object-fit:cover;object-position:50% 0}
-.hero-person figcaption{position:relative;margin-top:14px;padding:0 4px;line-height:1.4;text-align:center}
+/* Nameplate: RYAN over PASCAL on the left, roles stacked on the right with cobalt squares. */
+.hero-person figcaption{position:relative;display:flex;justify-content:space-between;align-items:center;gap:24px;max-width:300px;margin:14px auto 0;padding:0;line-height:1.4;text-align:left}
 /* Name: the logo's condensed caps, surname in cobalt like "PUSHBACK". Roles split by small cobalt squares (the logo tile). */
-.person-name{display:block;font-size:30px;line-height:1;font-weight:760;font-stretch:75%;letter-spacing:.02em;text-transform:uppercase}
-.person-name span{color:var(--cobalt-text)}
-.hero-person figcaption .caption-role{display:block;margin-top:11px;color:var(--muted);text-transform:uppercase;font-size:13px;font-weight:650;font-stretch:75%;letter-spacing:.08em}
-.caption-role span+span::before{content:"";display:inline-block;width:5px;height:5px;margin:0 .7em .18em;border-radius:1px;background:var(--cobalt-text);vertical-align:middle}
+.person-name{display:block;font-size:32px;line-height:.95;font-weight:760;font-stretch:75%;letter-spacing:.02em;text-transform:uppercase}
+.person-name span{display:block;color:var(--cobalt-text)}
+.hero-person figcaption .caption-role{display:block;margin:0;line-height:1.75;color:var(--muted);text-transform:uppercase;font-size:13px;font-weight:650;font-stretch:75%;letter-spacing:.08em}
+.caption-role span{display:flex;align-items:center;gap:10px}
+.caption-role span::before{content:"";flex:0 0 5px;width:5px;height:5px;border-radius:1px;background:var(--cobalt-text)}
 
 /* Section headings: centered over their grids. */
 .section-heading{max-width:780px;margin:0 auto 48px;text-align:center}
@@ -122,15 +125,13 @@ h3{font-size:22px;font-weight:620;letter-spacing:-.02em;line-height:1.25;margin:
  .hero-grid>.hero-copy{margin-top:0}
  .stepper{margin-top:28px}
  .stepper-label{font-size:12.5px}
- .hero-person{display:flex;gap:16px;align-items:center;max-width:none;margin-top:36px}
+ .hero-person{display:flex;gap:16px;align-items:center;max-width:none;margin:36px 0 0}
  .hero-person::before{left:-18px;right:auto;top:-14px;width:148px;height:150px;background:radial-gradient(closest-side at 52% 42%,rgba(82,102,235,.38),rgba(82,102,235,.12) 60%,rgba(82,102,235,0) 100%)}
  .hero-person picture{width:112px;flex:0 0 112px}
  .hero-person img{width:112px;height:140px}
- .hero-person figcaption{flex:1;min-width:0;margin:0;padding:0;text-align:left}
+ .hero-person figcaption{flex:1;min-width:0;max-width:none;margin:0;padding:0;flex-direction:column;align-items:flex-start;gap:10px}
  .person-name{font-size:24px}
  .hero-person figcaption .caption-role{font-size:13px;letter-spacing:.08em;line-height:1.6}
- .caption-role span{display:block}
- .caption-role span+span::before{content:none}
  .section-heading{margin-bottom:28px}
  h2{font-size:clamp(30px,8vw,38px)}
  h3{font-size:20px}
