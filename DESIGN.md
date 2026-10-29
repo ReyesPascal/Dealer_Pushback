@@ -38,7 +38,7 @@ One family: **Archivo** variable, self-hosted at `assets/fonts/archivo-latin-var
 | Lede | 19–21px (18 phone) | 430 | 0 |
 | Body | 18px (17px phone) | 430 | 0 |
 | Caption role | 13px uppercase | 600 | 0.14em |
-| Footer | 14px (13px phone) | 430 | 0 |
+| Footer | 13px (12.5px phone) | 430 | 0 |
 | Step number | 13px in a 32px cobalt badge | 650 | 0 |
 
 Nothing on the page is smaller than 12px. Body paragraphs cap at 62 characters per line (`--measure`).
@@ -57,9 +57,11 @@ Nothing on the page is smaller than 12px. Body paragraphs cap at 62 characters p
 - **Portrait:** a transparent cutout (hair and beard edges keyed strand by strand from the original gray backdrop) that fades into the canvas at the shoulders, lit from above so the body falls into shadow. No frame or box: a soft cobalt radial glow (`.hero-person::before`) sits behind the head, and the name overlaps the faded shoulders. Served as WebP with transparency; the JPEG fallback (also the social preview image) has the glow baked in. On phones it shrinks to 112px beside the name with a smaller glow, and the three roles stack.
 - **Step number:** 32px cobalt tile with a white number, echoing the logo mark.
 - **Question cards:** a three-column grid using subgrid, so numbers, headings and answers start on the same line in every card. Keep answers about the same length.
-- **Process step:** card with the number in a 40px left column.
-- **Header:** wordmark left, tagline right, no bar or border.
-- **Footer:** on the band. Two columns: legal disclaimer and copyright on the left in `--faint`; the "Closed to new requests." notice on the right (20px heading in `--text`, 15px body in `--muted`). On phones they stack with the notice first.
+- **Section heading:** centered over its grid, `text-wrap: balance`. The process section carries one eyebrow above its heading: "Evidence first. Conclusions second." in uppercase `--cobalt-text`.
+- **Process steps:** 2 × 2 grid of cards (one column on phones), number in a 32px left column.
+- **Hero copy:** headline, one-sentence lede in `--text`, then a "What I review" group: small uppercase label "I look through", three chips (icon + label: Repair records, Coverage rules, Past messages) on `--card`, and the outcome line in `--muted`. On phones the chips become three equal columns with the icon above the label.
+- **Header:** sticky, frosted band (`rgba(28,28,39,.82)` + 14px backdrop blur), 80px tall (64px phones). Logo left at 46px (34px phones, 30px under 360px). Right: a status pill (gray dot, "Closed to new requests", shortened to "Closed" on phones). No navigation links.
+- **Footer:** compact band (28px/24px padding). Two columns: legal disclaimer (13px) and copyright (12px) on the left in `--faint`; the "Closed to new requests." notice on the right (15px heading in `--text`, 13px body in `--muted`). On phones they stack with the notice first.
 
 ## Brand marks
 
@@ -71,7 +73,7 @@ All in `assets/img/brand/` (favicon at the site root). Letters are outlined from
 
 | File | Use |
 |---|---|
-| `logo-primary.svg` | Mark plus wordmark for dark backgrounds. Used in the site header (36px tall, 28px on phones, 24px under 360px) |
+| `logo-primary.svg` | Mark plus wordmark for dark backgrounds. Used in the site header (46px tall, 34px on phones, 30px under 360px) |
 | `logo-on-light.svg` | Same for light backgrounds: documents, email, print |
 | `icon.svg` | Mark alone |
 | `favicon.svg` | Mark at 32px |

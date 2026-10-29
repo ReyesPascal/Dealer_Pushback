@@ -5,31 +5,33 @@
   /* Surfaces: canvas and band alternate by section; cards sit one step above their section. */
   --canvas:#15151d; --band:#1c1c27;
   --card:#1f1f2b; --card-on-band:#262633;
-  /* Text: all pass WCAG AA on every surface; muted and faint brightened for dark-mode legibility. */
+  /* Text: all pass WCAG AA on every surface. */
   --text:#f2f2f6; --muted:#d0d0d9; --faint:#a9a9b7;
   /* One blue family, matching the logo: tile cobalt for fills, logo "PUSHBACK" tint for text. */
   --cobalt:#5266eb; --cobalt-text:#8f9cf5; --cobalt-deep:#222a66;
-  --radius-sm:4px; --radius-badge:8px; --radius-card:14px; --radius-photo:24px; --radius-pill:32px;
+  --radius-sm:4px; --radius-badge:8px; --radius-card:14px; --radius-pill:999px;
   --max:1200px; --gutter:clamp(24px,5vw,64px);
   --section:clamp(72px,8vw,112px); --card-pad:32px; --gap:14px;
+  --header:80px;
   --measure:62ch;
 }
 *,*::before,*::after {box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:var(--canvas)}
+html{scroll-behavior:smooth;scroll-padding-top:var(--header);-webkit-text-size-adjust:100%;background:var(--canvas)}
 body{margin:0;background:var(--canvas);color:var(--text);font:430 18px/1.6 'Archivo','Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:var(--cobalt-text);text-decoration-thickness:1px;text-underline-offset:4px}
-img{display:block;max-width:100%}
+img,svg{display:block;max-width:100%}
 :focus-visible{outline:2px solid var(--cobalt-text);outline-offset:4px;border-radius:var(--radius-sm)}
 .shell{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
-.skip-link{position:absolute;left:-100vw;top:0;z-index:5;background:var(--cobalt);color:#fff;padding:12px 18px;border-radius:var(--radius-pill)}
+.skip-link{position:absolute;left:-100vw;top:0;z-index:20;background:var(--cobalt);color:#fff;padding:12px 18px;border-radius:var(--radius-pill)}
 .skip-link:focus{left:12px;top:12px}
 
-/* Header */
-.header-inner{height:84px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+/* Header: sticky frosted bar in the band shade. Logo left, status right. No links besides home. */
+.site-header{position:sticky;top:0;z-index:10;background:rgba(28,28,39,.82);-webkit-backdrop-filter:saturate(140%) blur(14px);backdrop-filter:saturate(140%) blur(14px)}
+.header-inner{height:var(--header);display:flex;align-items:center;justify-content:space-between;gap:20px}
 .wordmark{display:block;line-height:0;flex:0 0 auto}
-.wordmark img{height:36px;width:auto}
-.principle{font-size:15px;font-weight:500;letter-spacing:.01em;margin:0;color:var(--muted)}
-.header-principle{text-align:right}
+.wordmark img{height:46px;width:auto}
+.status{display:inline-flex;align-items:center;gap:9px;margin:0;padding:8px 14px 8px 12px;border-radius:var(--radius-pill);background:var(--card-on-band);color:var(--muted);font-size:14px;font-weight:550;line-height:1;white-space:nowrap}
+.status-dot{width:8px;height:8px;border-radius:50%;background:var(--faint);box-shadow:0 0 0 3px rgba(169,169,183,.18)}
 
 /* Sections alternate canvas and band so each one reads as its own block. */
 .section-block{padding:var(--section) 0}
@@ -37,10 +39,18 @@ img{display:block;max-width:100%}
 
 /* Hero */
 .hero{overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.75fr);gap:clamp(36px,6vw,96px);align-items:center;padding-top:clamp(32px,4vw,56px);padding-bottom:var(--section)}
-h1{font-size:clamp(50px,5.2vw,76px);line-height:1.03;letter-spacing:-.045em;font-weight:540;max-width:720px;margin:0 0 28px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(280px,.75fr);gap:clamp(36px,6vw,96px);align-items:center;padding-top:clamp(40px,5vw,72px);padding-bottom:var(--section)}
+h1{font-size:clamp(50px,5.2vw,76px);line-height:1.03;letter-spacing:-.045em;font-weight:540;max-width:720px;margin:0 0 24px;text-wrap:balance}
 h1 em{font-style:normal;color:var(--cobalt-text)}
-.hero-lede{max-width:34em;font-size:clamp(19px,1.45vw,21px);line-height:1.6;color:var(--muted);margin:0}
+.hero-lede{max-width:30em;font-size:clamp(20px,1.6vw,23px);line-height:1.5;color:var(--text);margin:0 0 32px;text-wrap:pretty}
+/* What I review: three chips between a short label and the outcome line. */
+.review{max-width:560px}
+.review-label{margin:0 0 12px;color:var(--faint);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.review-list{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 16px;padding:0;list-style:none}
+.review-list li{display:inline-flex;align-items:center;gap:10px;padding:10px 16px 10px 12px;border-radius:12px;background:var(--card);color:var(--text);font-size:16px;font-weight:560;line-height:1.2}
+.review-list svg{width:22px;height:22px;flex:0 0 22px;fill:none;stroke:var(--cobalt-text);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.review-outcome{margin:0;color:var(--muted);font-size:17px;line-height:1.55;text-wrap:pretty}
+
 /* Portrait: transparent cutout that fades into the canvas, lit by a soft cobalt glow. No frame. */
 .hero-person{position:relative;isolation:isolate;margin:0;min-width:0;max-width:420px;justify-self:end;width:100%}
 .hero-person::before{content:"";position:absolute;z-index:-1;left:-14%;right:-14%;top:-8%;height:92%;background:radial-gradient(closest-side at 55% 42%,rgba(82,102,235,.36),rgba(82,102,235,.14) 55%,rgba(82,102,235,0) 100%);pointer-events:none}
@@ -51,9 +61,10 @@ h1 em{font-style:normal;color:var(--cobalt-text)}
 .hero-person figcaption .caption-role{display:block;margin-top:6px;color:var(--faint);text-transform:uppercase;font-size:13px;font-weight:600;letter-spacing:.14em}
 .caption-role span+span::before{content:"\00b7";display:inline-block;margin:0 .5em 0 .36em;letter-spacing:0}
 
-/* Shared type */
-.section-heading{margin-bottom:40px}
-h2{font-weight:540;letter-spacing:-.04em;line-height:1.1;font-size:clamp(32px,3.3vw,46px);margin:0}
+/* Section headings: centered over their grids. */
+.section-heading{max-width:780px;margin:0 auto 48px;text-align:center}
+.eyebrow{margin:0 0 14px;color:var(--cobalt-text);font-size:13px;font-weight:620;letter-spacing:.14em;text-transform:uppercase}
+h2{font-weight:540;letter-spacing:-.04em;line-height:1.1;font-size:clamp(32px,3.3vw,46px);margin:0;text-wrap:balance}
 h3{font-size:22px;font-weight:620;letter-spacing:-.02em;line-height:1.25;margin:0 0 10px}
 /* Step number: a small cobalt tile, echoing the logo mark. */
 .number{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:var(--radius-badge);background:var(--cobalt);color:#fff;font-size:13px;font-weight:650;font-variant-numeric:tabular-nums;letter-spacing:0}
@@ -64,29 +75,24 @@ h3{font-size:22px;font-weight:620;letter-spacing:-.02em;line-height:1.25;margin:
 .question .number{margin-bottom:24px}
 .question p{font-size:18px;line-height:1.6;color:var(--muted);margin:0}
 
-/* Process (on the canvas) */
-.split-layout{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:clamp(48px,7vw,104px)}
-.split-heading h2{max-width:320px}
-.split-heading>p:last-child{font-size:18px;line-height:1.6;color:var(--muted);max-width:300px;margin:20px 0 0}
-.process-list{padding:0;margin:0;list-style:none;display:grid;gap:var(--gap)}
-.process-list li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:22px;background:var(--card);border-radius:var(--radius-card);padding:28px var(--card-pad)}
+/* Process (on the canvas): 2 x 2 grid of steps. */
+.process-list{padding:0;margin:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}
+.process-list li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:20px;background:var(--card);border-radius:var(--radius-card);padding:28px var(--card-pad)}
 .process-list h3{font-size:21px;margin:3px 0 8px}
-.process-list p{margin:0;max-width:var(--measure);font-size:18px;line-height:1.6;color:var(--muted)}
+.process-list p{margin:0;font-size:17px;line-height:1.6;color:var(--muted)}
 
-/* Footer: legal text left, closure notice right, on the band so it separates from the process section. */
-.footer{background:var(--band);padding:56px 0 48px}
-.footer-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(40px,7vw,104px);align-items:start}
-.footer-legal{display:flex;flex-direction:column;gap:12px}
-.footer p{margin:0;color:var(--faint);font-size:14px;line-height:1.6;max-width:80ch}
-.footer .copyright{font-size:13px}
-.footer-status h2{font-size:20px;font-weight:620;letter-spacing:-.02em;line-height:1.3;margin:0 0 8px;color:var(--text)}
-.footer-status p{color:var(--muted);font-size:15px}
-.hero-copy{padding:clamp(32px,6vw,72px) 0}
+/* Footer: compact band. Legal text left, closure notice right. */
+.footer{background:var(--band);padding:28px 0 24px}
+.footer-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.footer-legal{display:flex;flex-direction:column;gap:8px}
+.footer p{margin:0;color:var(--faint);font-size:13px;line-height:1.55;max-width:80ch}
+.footer .copyright{font-size:12px}
+.footer-status h2{font-size:15px;font-weight:620;letter-spacing:-.01em;line-height:1.3;margin:0 0 4px;color:var(--text);text-wrap:wrap}
+.footer-status p{color:var(--muted)}
 
 @media(max-width:1000px){
  .hero-grid{grid-template-columns:minmax(0,1.2fr) minmax(220px,.8fr);gap:36px}
  h1{font-size:clamp(46px,6vw,62px)}
- .split-layout{grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:40px}
  .question-grid{grid-template-columns:1fr;row-gap:var(--gap)}
  .question{grid-row:auto;grid-template-rows:none;grid-template-columns:32px minmax(0,1fr) minmax(0,1.5fr);column-gap:24px;align-items:start;padding:26px}
  .question .number{margin:0}
@@ -94,15 +100,18 @@ h3{font-size:22px;font-weight:620;letter-spacing:-.02em;line-height:1.25;margin:
  .hero-person figcaption .caption-role{font-size:12px;letter-spacing:.1em}
 }
 @media(max-width:720px){
- :root{--gutter:20px;--card-pad:22px;--section:56px;--gap:12px}
+ :root{--gutter:20px;--card-pad:22px;--section:56px;--gap:12px;--header:64px}
  body{font-size:17px}
- .header-inner{height:66px}
- .wordmark img{height:28px}
- .header-principle{font-size:13px;line-height:1.3;max-width:13em}
- .hero-grid{display:block;padding-top:28px;padding-bottom:var(--section)}
- h1{font-size:clamp(40px,11vw,60px);line-height:1.05;margin-bottom:20px}
- .hero-lede{font-size:18px}
- .hero-person{display:flex;gap:16px;align-items:center;max-width:none;margin-top:32px}
+ .wordmark img{height:34px}
+ .status{font-size:13px;padding:7px 12px 7px 10px}
+ .status-long{display:none}
+ .hero-grid{display:block;padding-top:32px;padding-bottom:var(--section)}
+ h1{font-size:clamp(40px,11vw,60px);line-height:1.05;margin-bottom:18px}
+ .hero-lede{font-size:19px;margin-bottom:26px}
+ .review-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+ .review-list li{flex-direction:column;justify-content:center;gap:8px;padding:14px 6px 12px;font-size:14px;text-align:center}
+ .review-outcome{font-size:16px}
+ .hero-person{display:flex;gap:16px;align-items:center;max-width:none;margin-top:36px}
  .hero-person::before{left:-18px;right:auto;top:-14px;width:148px;height:150px;background:radial-gradient(closest-side at 52% 42%,rgba(82,102,235,.38),rgba(82,102,235,.12) 60%,rgba(82,102,235,0) 100%)}
  .hero-person picture{width:112px;flex:0 0 112px}
  .hero-person img{width:112px;height:140px}
@@ -111,23 +120,20 @@ h3{font-size:22px;font-weight:620;letter-spacing:-.02em;line-height:1.25;margin:
  .hero-person figcaption .caption-role{font-size:12px;letter-spacing:.12em;line-height:1.6}
  .caption-role span{display:block}
  .caption-role span+span::before{content:none}
- .section-heading{margin-bottom:24px}
+ .section-heading{margin-bottom:28px}
  h2{font-size:clamp(30px,8vw,38px)}
  h3{font-size:20px}
  .question{display:block}
  .question .number{margin-bottom:16px}
  .question h3{margin:0 0 8px}
- .question p,.process-list p,.split-heading>p:last-child{font-size:17px}
- .split-layout{display:block}
- .split-heading{margin-bottom:24px}
- .split-heading>p:last-child{margin-top:12px;max-width:none}
+ .question p{font-size:17px}
+ .process-list{grid-template-columns:1fr}
  .process-list li{grid-template-columns:32px 1fr;gap:16px;padding:22px}
  .process-list h3{font-size:20px}
- .footer{padding:40px 0 32px}
- .footer-grid{grid-template-columns:1fr;gap:28px}
+ .footer{padding:24px 0 20px}
+ .footer-grid{grid-template-columns:1fr;gap:16px}
  .footer-status{order:-1}
- .footer-status h2{font-size:19px}
- .footer p{font-size:13px}
+ .footer p{font-size:12.5px}
 }
-@media(max-width:360px){:root{--gutter:16px}.wordmark img{height:24px}}
+@media(max-width:360px){:root{--gutter:16px}.wordmark img{height:30px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
