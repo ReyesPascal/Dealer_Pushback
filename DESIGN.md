@@ -1,5 +1,5 @@
 # Dealer Pushback — static editorial design rules
-Revision: October 24, 2026, after desktop/mobile visual review.
+Revision: October 29, 2026, reflecting the user's removal of the Background section.
 
 ## Direction
 A quiet, serious document-first website. Credibility comes from exact distinctions, restrained typography, evident source discipline and clear boundaries—not badges, aggressive language or decorative effects.
@@ -8,10 +8,11 @@ A quiet, serious document-first website. Credibility comes from exact distinctio
 1. Opening: the difference between a repair diagnosis and a coverage determination, plus Ryan's real portrait and factual byline.
 2. Three questions: dealer observation, manufacturer criteria, manufacturer decision.
 3. Method: original terms, diagnosis/evidence, missing records, written terms.
-4. Background: verified UAB degree and Auburn graduate coursework; additional training stated without unearned certifications.
-5. Owner boundaries and confidentiality.
-6. Exact Part 9 no-money/no-benefit commitment.
-7. Permanent closure and footer attorney disclaimers.
+4. Owner boundaries and confidentiality in one short paragraph, ending "The owner makes every decision."
+5. Exact no-money/no-benefit commitment.
+6. Permanent closure and footer attorney disclaimers.
+
+The entire former Background/credentials section and its tinted background, padding, and navigation link were removed at the user's request. Do not reintroduce it or leave an empty spacer. The separate legal/role disclaimer in the footer must remain.
 
 Do not repeat the same coverage/goodwill paragraph across multiple sections or let compliance text dominate the opening.
 
@@ -28,9 +29,9 @@ Do not repeat the same coverage/goodwill paragraph across multiple sections or l
 
 ## Responsive and accessibility
 - Verify widths 1440, 1024, 768, 390 and 320 px. No horizontal overflow; single column at phone widths.
-- Navigation is labeled and internal anchors resolve. Preserve semantic `main`, `section`, `h1–h3`, `ol`, `dl` and descriptive portrait alt.
+- Navigation is labeled and links only to the existing `#approach` anchor. Preserve semantic `main`, `section`, `h1–h3`, `ol` and descriptive portrait alt.
 - All controls accessible by keyboard with visible focus. Reduced-motion preference avoids smooth scroll.
-- Preserve the exact footer no-benefit line and original money paragraph, as controlled by private `LT_DP/project/conduct.md`.
+- Preserve the exact footer no-benefit line and original money paragraph, as required by the site's existing public commitments and current private case rules.
 
 ## Confidentiality
 This repository is PUBLIC. Never commit owner identity, dealership/manufacturer case specifics, VIN, repair order, correspondence, strategic workflow or personal transcripts and letters. Private notes go in `ReyesPascal/LT_DP` only.
