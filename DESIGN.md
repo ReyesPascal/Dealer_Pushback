@@ -56,15 +56,19 @@ Headlines stay medium weight. Don't go back to 700+ heavy display type.
 
 ## Brand marks
 
-All in `assets/img/brand/` (favicon at the site root). Text is outlined from Archivo, so the files need no font.
+All in `assets/img/brand/` (favicon at the site root). Letters are outlined from Archivo, so the files need no font.
+
+- **Mark, the "Pushback D":** a cobalt `#5266eb` tile (24% corner radius) holding a white D whose counter is a left-pointing arrow. The arrow is cut out (negative space), so the tile color shows through.
+- **Wordmark:** "DEALER PUSHBACK" in Archivo condensed caps (width 75, weight 760, +0.02em tracking). "DEALER" in ivory `#ededf3` on dark or canvas `#171721` on light; "PUSHBACK" in cobalt (`#8f9cf5` on dark, `#5266eb` on light).
+- **Clear space:** keep at least half the tile's height empty around the lockup.
 
 | File | Use |
 |---|---|
-| `icon.svg` | Cobalt `#5266eb` tile, 22% corner radius, white "DP" at weight 640 |
-| `favicon.svg` | Same tile at 32px with larger letters so "DP" reads at 16px |
-| `logo-primary.svg` | Tile plus "Dealer Pushback" in `#ededf3`, for dark backgrounds |
-| `logo-on-light.svg` | Same with the wordmark in `#171721`, for light backgrounds |
+| `logo-primary.svg` | Mark plus wordmark for dark backgrounds. Used in the site header (36px tall, 28px on phones, 24px under 360px) |
+| `logo-on-light.svg` | Same for light backgrounds: documents, email, print |
+| `icon.svg` | Mark alone |
+| `favicon.svg` | Mark at 32px |
 | `apple-touch-icon.png` | 180px square, no rounding (iOS rounds it) |
-| `icon-512.png`, `email-signature-icon.png` | Rounded tile at 512px and 104px |
+| `icon-512.png`, `email-signature-icon.png` | Rounded mark at 512px and 104px |
 
-The tile is cobalt rather than canvas dark so it stays visible in both light and dark browser tabs.
+When the logo changes, bump the `?v=` on its references in `index.html` and `404.html` so browsers fetch the new file.
