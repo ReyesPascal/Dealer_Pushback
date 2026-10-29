@@ -34,11 +34,11 @@ h1 em{font-style:normal;color:#606064}
 .hero-person figcaption .caption-role{text-transform:uppercase;font-size:12px;font-weight:700;letter-spacing:.16em;line-height:1.5}
 .section-block{padding:clamp(78px,9vw,132px) 0}
 .questions{padding-top:clamp(85px,9vw,125px);padding-bottom:clamp(90px,9vw,126px)}
-.section-heading{display:grid;grid-template-columns:240px 1fr;gap:40px;align-items:start;margin-bottom:64px}
+.section-heading{margin-bottom:64px}
 .section-heading .eyebrow{margin:12px 0 0}
 h2{font-weight:710;letter-spacing:-.055em;line-height:1.11;font-size:clamp(32px,3.5vw,51px);margin:0}
-.question-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px}
-.question{border-top:2px solid var(--ink);padding-top:22px}
+.question-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:36px;row-gap:0}
+.question{border-top:2px solid var(--ink);padding-top:22px;display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0;align-content:start}
 .number{font-variant-numeric:tabular-nums;font-size:13px;font-weight:720;color:var(--secondary)}
 .question .number{display:block;margin-bottom:41px}
 h3{font-size:22px;font-weight:700;letter-spacing:-.03em;line-height:1.22;margin:0 0 18px}
@@ -73,7 +73,6 @@ h3{font-size:22px;font-weight:700;letter-spacing:-.03em;line-height:1.22;margin:
 @media(max-width:1000px){
  .hero-grid{min-height:560px;grid-template-columns:minmax(0,1.2fr) minmax(240px,.8fr);gap:36px}
  h1{font-size:clamp(51px,6vw,70px)}
- .section-heading{grid-template-columns:170px 1fr}
  .split-layout,.money-grid,.closed-grid,.footer-grid{grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:45px}
 }
 @media(max-width:720px){
@@ -103,6 +102,7 @@ h3{font-size:22px;font-weight:700;letter-spacing:-.03em;line-height:1.22;margin:
  .section-heading .eyebrow{margin:0 0 15px}
  h2{font-size:clamp(31px,8.2vw,42px)}
  .question-grid{grid-template-columns:1fr;gap:28px}
+ .question{display:block}
  .question{padding-top:14px}
  .question .number{margin-bottom:12px}
  .question h3{font-size:21px;margin-bottom:8px}
