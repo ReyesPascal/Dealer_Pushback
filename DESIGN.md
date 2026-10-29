@@ -5,8 +5,8 @@ Based on the Mercury style from Refero Styles, adapted for a static site on Pork
 ## Principles
 
 - **No divider lines.** Separate things with a step in background shade and with space. No `border-top`, `border-bottom` or hairline rules between sections or items.
-- **No shadows, no gradients.** Depth comes only from the three surface shades.
-- **One accent.** Cobalt is the only color. Use it for one phrase in the hero, step numbers and links. Never for body text or large fills.
+- **No drop shadows.** Depth comes from the surface shades. The only gradient is the soft cobalt glow behind the portrait, and the only blur is the sticky header's frosted background.
+- **One accent.** Cobalt is the only color: the hero phrase "coverage decision.", "PASCAL" and the role squares, step numbers, chip icons, the section eyebrow and links. Never for body text or large fills.
 - **Static only.** Plain HTML and CSS, no build step, no JavaScript, self-hosted fonts.
 
 ## Color
@@ -42,6 +42,8 @@ One family: **Archivo** variable, self-hosted at `assets/fonts/archivo-latin-var
 | Step number | 13px in a 32px cobalt badge | 650 | 0 |
 
 Nothing on the page is smaller than 12px. Body paragraphs cap at 62 characters per line (`--measure`).
+
+Line breaks: headings use `text-wrap: balance`; card, step and footer paragraphs use `text-wrap: pretty`. As a fallback for browsers without `pretty`, the last two words of each card and step paragraph are joined with `&nbsp;`, so no paragraph ends on a lone word.
 
 ## Space and shape
 
@@ -93,3 +95,7 @@ sed -i -E "s/site\.css\?v=[A-Za-z0-9]+/site.css?v=$H/" index.html 404.html
 ```
 
 Then grep both files to confirm the new tag is there. Never bump versions with a broad find-and-replace like `?v=2` → `?v=3`, which can also hit the stylesheet tag.
+
+## 404 page
+
+`404.html` reuses the header and hero type: `<main class="hero notfound">` gets 64–128px top padding so the heading clears the sticky header. Same `site.css` tag as `index.html`.

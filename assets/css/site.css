@@ -63,7 +63,9 @@ h1 em{font-style:normal;color:var(--cobalt-text)}
 .section-heading{max-width:780px;margin:0 auto 48px;text-align:center}
 .eyebrow{margin:0 0 14px;color:var(--cobalt-text);font-size:13px;font-weight:620;letter-spacing:.14em;text-transform:uppercase}
 h2{font-weight:540;letter-spacing:-.04em;line-height:1.1;font-size:clamp(32px,3.3vw,46px);margin:0;text-wrap:balance}
-h3{font-size:22px;font-weight:620;letter-spacing:-.02em;line-height:1.25;margin:0 0 10px}
+h3{font-size:22px;font-weight:620;letter-spacing:-.02em;line-height:1.25;margin:0 0 10px;text-wrap:balance}
+/* Body copy: avoid one-word last lines. */
+.question p,.process-list p,.footer p{text-wrap:pretty}
 /* Step number: a small cobalt tile, echoing the logo mark. */
 .number{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:var(--radius-badge);background:var(--cobalt);color:#fff;font-size:13px;font-weight:650;font-variant-numeric:tabular-nums;letter-spacing:0}
 
@@ -87,6 +89,10 @@ h3{font-size:22px;font-weight:620;letter-spacing:-.02em;line-height:1.25;margin:
 .footer .copyright{font-size:12px}
 .footer-status h2{font-size:15px;font-weight:620;letter-spacing:-.01em;line-height:1.3;margin:0 0 4px;color:var(--text);text-wrap:wrap}
 .footer-status p{color:var(--muted)}
+
+/* 404 page */
+.notfound{padding:clamp(64px,10vw,128px) 0 clamp(80px,12vw,160px)}
+.notfound h1{margin-bottom:20px}
 
 @media(max-width:1000px){
  .hero-grid{grid-template-columns:minmax(0,1.2fr) minmax(220px,.8fr);gap:36px}
