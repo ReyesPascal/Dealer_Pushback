@@ -9,7 +9,7 @@
   --text:#f2f2f6; --muted:#d0d0d9; --faint:#a9a9b7;
   /* One blue family, matching the logo: tile cobalt for fills, logo "PUSHBACK" tint for text. */
   --cobalt:#5266eb; --cobalt-text:#8f9cf5; --cobalt-deep:#222a66;
-  --radius-sm:4px; --radius-badge:8px; --radius-card:14px; --radius-pill:999px;
+  --radius-sm:4px; --radius-badge:8px; --radius-card:14px; --radius-photo:24px; --radius-pill:999px;
   --max:1200px; --gutter:clamp(24px,5vw,64px);
   --section:clamp(72px,8vw,112px); --card-pad:32px; --gap:14px;
   --header:80px;
@@ -55,9 +55,10 @@ h1 em{font-style:normal;color:var(--cobalt-text)}
 .stepper li{position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 4px;text-align:center}
 .stepper-label{font-size:13.5px;font-weight:620;line-height:1.25;color:var(--text);text-wrap:balance}
 /* Portrait: transparent cutout that fades into the canvas, lit by a soft cobalt glow. No frame. */
-/* Raised 16px so the round crown overshoots the headline's cap line: optically level. */
-.hero-person{position:relative;isolation:isolate;margin:-16px 0 0;min-width:0;max-width:420px;justify-self:end;width:100%}
-.hero-person::before{content:"";position:absolute;z-index:-1;left:-14%;right:-14%;top:-8%;height:92%;background:radial-gradient(closest-side at 55% 42%,rgba(82,102,235,.36),rgba(82,102,235,.14) 55%,rgba(82,102,235,0) 100%);pointer-events:none}
+/* Profile card: the portrait and nameplate sit on a --card panel so the right side reads as its own object.
+   Pulled up by its top padding so the crown stays level with the headline's cap line. */
+.hero-person{position:relative;isolation:isolate;margin:-28px 0 0;padding:28px 28px 26px;min-width:0;max-width:440px;justify-self:end;width:100%;background:var(--card);border-radius:var(--radius-photo);overflow:hidden}
+.hero-person::before{content:"";position:absolute;z-index:-1;left:-10%;right:-10%;top:-6%;height:92%;background:radial-gradient(closest-side at 55% 42%,rgba(82,102,235,.36),rgba(82,102,235,.14) 55%,rgba(82,102,235,0) 100%);pointer-events:none}
 .hero-person picture{display:block;width:100%}
 .hero-person img{width:100%;height:auto;aspect-ratio:480/545;object-fit:cover;object-position:50% 0}
 /* Nameplate: RYAN over PASCAL on the left, roles stacked on the right with cobalt squares. */
@@ -125,7 +126,7 @@ h3{font-size:22px;font-weight:620;letter-spacing:-.02em;line-height:1.25;margin:
  .hero-grid>.hero-copy{margin-top:0}
  .stepper{margin-top:28px}
  .stepper-label{font-size:12.5px}
- .hero-person{display:flex;gap:16px;align-items:center;max-width:none;margin:36px 0 0}
+ .hero-person{display:flex;gap:16px;align-items:center;max-width:none;margin:36px 0 0;padding:14px 18px 14px 10px;border-radius:18px}
  .hero-person::before{left:-18px;right:auto;top:-14px;width:148px;height:150px;background:radial-gradient(closest-side at 52% 42%,rgba(82,102,235,.38),rgba(82,102,235,.12) 60%,rgba(82,102,235,0) 100%)}
  .hero-person picture{width:112px;flex:0 0 112px}
  .hero-person img{width:112px;height:140px}
