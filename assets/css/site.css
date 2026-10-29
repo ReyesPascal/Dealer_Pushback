@@ -52,18 +52,6 @@ h3{font-size:22px;font-weight:700;letter-spacing:-.03em;line-height:1.22;margin:
 .process-list .number{padding-top:4px}
 .process-list h3{font-size:20px;margin:0 0 9px}
 .process-list p{margin:0;max-width:570px;font-size:17px;line-height:1.55;color:var(--muted)}
-.background-section{background:#EEEEEB;border-top:1px solid #E4E4DF;border-bottom:1px solid #E4E4DF}
-.bio-column{max-width:660px}
-.bio-intro{font-size:21px;line-height:1.56;margin:0 0 33px;letter-spacing:-.014em}
-.credentials{border-top:2px solid var(--ink);margin:0 0 30px}
-.credentials>div{display:grid;grid-template-columns:140px 1fr;gap:24px;padding:19px 0 22px;border-bottom:1px solid #CCCCC8}
-.credentials dt{font-size:13px;color:var(--secondary);font-weight:700;line-height:1.45}
-.credentials dd{margin:0}
-.credentials strong{display:block;font-size:17px;font-weight:710;line-height:1.35;letter-spacing:-.013em}
-.credentials span{display:block;margin-top:5px;color:var(--muted);font-size:15px;line-height:1.5}
-.role-limit{margin:0 0 24px;font-size:17px;color:var(--muted)}
-.disclaimer-emphasis{margin:0;padding:18px 0 0;border-top:1px solid #BDBDB9;font-size:17px;font-weight:660;line-height:1.65}
-.disclaimer-emphasis span{display:inline;box-decoration-break:clone;-webkit-box-decoration-break:clone}
 .standards{padding-top:95px;padding-bottom:95px}
 .standards-copy p{margin:0 0 18px;color:var(--muted);font-size:18px;max-width:630px}
 .standards-copy p:last-child{margin:0}
@@ -122,12 +110,6 @@ h3{font-size:22px;font-weight:700;letter-spacing:-.03em;line-height:1.22;margin:
  .process-list li{grid-template-columns:35px 1fr;gap:18px;padding-bottom:23px}
  .process-list h3{font-size:19px}
  .process-list p{font-size:16px}
- .bio-intro{font-size:18px}
- .credentials>div{grid-template-columns:98px 1fr;gap:16px}
- .credentials strong{font-size:16px}
- .credentials span{font-size:14px}
- .role-limit{font-size:16px}
- .disclaimer-emphasis{font-size:18px}
  .standards{padding:66px 0}
  .standards-copy p{font-size:16px}
  .no-money{padding:58px 0}
@@ -140,5 +122,5 @@ h3{font-size:22px;font-weight:700;letter-spacing:-.03em;line-height:1.22;margin:
  .footer .wordmark{display:block;margin-bottom:24px}
  .footer p{font-size:13px}
 }
-@media(max-width:360px){:root{--gutter:18px}.wordmark{font-size:17px}.nav-links{gap:13px}.nav-links a{font-size:12px}.credentials>div{display:block}.credentials dt{margin-bottom:5px}}
+@media(max-width:360px){:root{--gutter:18px}.wordmark{font-size:17px}.nav-links{gap:13px}.nav-links a{font-size:12px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
