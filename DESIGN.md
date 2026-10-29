@@ -13,44 +13,51 @@ Based on the Mercury style from Refero Styles, adapted for a static site on Pork
 
 | Token | Hex | Use |
 |---|---|---|
-| `--canvas` | `#171721` | Page background |
-| `--card` | `#1e1e2a` | Cards, photo frame |
-| `--raised` | `#272735` | The one emphasized block (closure notice) |
-| `--text` | `#ededf3` | Headings, primary text |
-| `--muted` | `#c3c3cc` | Body copy, lede, header tagline |
-| `--faint` | `#9696a3` | Eyebrow labels, caption role, footer |
-| `--cobalt` | `#5266eb` | Filled accents (skip link) |
-| `--cobalt-text` | `#8f9cf5` | Cobalt for text on dark: hero accent, numbers, links |
+| `--canvas` | `#15151d` | Page background; hero, process and footer sections |
+| `--band` | `#1c1c27` | Alternating section background (questions, closure notice) so sections separate without lines |
+| `--card` | `#1f1f2b` | Cards on the canvas |
+| `--card-on-band` | `#262633` | Cards on a band, one step lighter |
+| `--text` | `#f2f2f6` | Headings, primary text |
+| `--muted` | `#d0d0d9` | Body copy, lede, tagline (9:1+ on every surface) |
+| `--faint` | `#a9a9b7` | Caption role, footer (6:1+ on every surface) |
+| `--cobalt` | `#5266eb` | Fills: logo tile, step-number badges, skip link |
+| `--cobalt-text` | `#8f9cf5` | Blue text on dark: hero accent, links. Same tint as "PUSHBACK" in the logo |
+| `--cobalt-deep` | `#222a66` | Portrait backdrop |
+
+Blue appears in exactly two shades, both taken from the logo. No other hues.
 
 ## Type
 
-One family: **Archivo** variable, self-hosted at `assets/fonts/archivo-latin-variable.woff2`. (Mercury's own face, Arcadia, isn't licensed for us. Archivo at medium weights carries the same calm feel.)
+One family: **Archivo** variable, self-hosted at `assets/fonts/archivo-latin-variable.woff2`. Body text is weight 430, slightly heavier than regular, because thin strokes fade on dark backgrounds.
 
 | Role | Size | Weight | Tracking |
 |---|---|---|---|
-| H1 | 52–80px fluid | 520 | -0.05em |
-| H2 | 32–48px fluid | 520 | -0.045em |
-| H3 | 20–21px | 600 | -0.02em |
-| Lede | 19–21px | 400 | -0.01em |
-| Body | 17px (16px mobile) | 400 | 0 |
-| Eyebrow / role | 12px uppercase | 600 | 0.16em |
-| Number | 13px tabular | 600 | 0 |
+| H1 | 50–76px fluid (40–60 phone) | 540 | -0.045em |
+| H2 | 32–46px fluid (30–38 phone) | 540 | -0.04em |
+| H3 | 21–22px (20 phone) | 620 | -0.02em |
+| Lede | 19–21px (18 phone) | 430 | 0 |
+| Body | 18px (17px phone) | 430 | 0 |
+| Caption role | 13px uppercase | 600 | 0.14em |
+| Footer | 14px (13px phone) | 430 | 0 |
+| Step number | 13px in a 32px cobalt badge | 650 | 0 |
 
-Headlines stay medium weight. Don't go back to 700+ heavy display type.
+Nothing on the page is smaller than 12px. Body paragraphs cap at 62 characters per line (`--measure`).
 
 ## Space and shape
 
 - Max width `1200px`, gutter 24–64px fluid (20px on phones).
 - Section rhythm `--section`: 72–112px fluid (56px on phones). Stacked sections share one gap, not two.
 - Card padding `--card-pad`: 32px (22px on phones). Gap between cards `--gap`: 12px.
-- Radius: `--radius-card` 12px for cards and blocks, 8px for the photo, `--radius-pill` 32px for buttons and the skip link, `--radius-sm` 4px for focus rings.
+- Radius: `--radius-card` 14px for cards, `--radius-photo` 24px for the portrait, `--radius-badge` 8px for number tiles, `--radius-pill` 32px for the skip link, `--radius-sm` 4px for focus rings.
 
 ## Components
 
-- **Card:** `--card` fill, 12px radius, no border. Used for the three questions, the process steps and the photo frame.
+- **Sections:** alternate `--canvas` and `--band` backgrounds (hero canvas, questions band, process canvas, closure band). This is the only section separator.
+- **Card:** `--card` (or `--card-on-band`) fill, 14px radius, no border. Used for the three questions and the process steps.
+- **Portrait:** cut out from its original background and placed on `--cobalt-deep` with a soft lighter glow behind the head. 24px radius, no frame. Square crop with 18px radius on phones.
+- **Step number:** 32px cobalt tile with a white number, echoing the logo mark.
 - **Question cards:** a three-column grid using subgrid, so numbers, headings and answers start on the same line in every card. Keep answers about the same length.
 - **Process step:** card with the number in a 40px left column.
-- **Emphasis block:** `--raised` fill, 12px radius, inside the page width. Only one per page.
 - **Header:** wordmark left, tagline right, no bar or border.
 - **Footer:** plain text in `--faint` on the canvas.
 
