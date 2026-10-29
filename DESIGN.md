@@ -13,8 +13,8 @@ Based on the Mercury style from Refero Styles, adapted for a static site on Pork
 
 | Token | Hex | Use |
 |---|---|---|
-| `--canvas` | `#15151d` | Page background; hero, process and footer sections |
-| `--band` | `#1c1c27` | Alternating section background (questions, closure notice) so sections separate without lines |
+| `--canvas` | `#15151d` | Page background; hero and process sections |
+| `--band` | `#1c1c27` | Alternating section background (questions, footer) so sections separate without lines |
 | `--card` | `#1f1f2b` | Cards on the canvas |
 | `--card-on-band` | `#262633` | Cards on a band, one step lighter |
 | `--text` | `#f2f2f6` | Headings, primary text |
@@ -52,14 +52,14 @@ Nothing on the page is smaller than 12px. Body paragraphs cap at 62 characters p
 
 ## Components
 
-- **Sections:** alternate `--canvas` and `--band` backgrounds (hero canvas, questions band, process canvas, closure band). This is the only section separator.
+- **Sections:** alternate `--canvas` and `--band` backgrounds (hero canvas, questions band, process canvas, footer band). This is the only section separator.
 - **Card:** `--card` (or `--card-on-band`) fill, 14px radius, no border. Used for the three questions and the process steps.
 - **Portrait:** a transparent cutout (hair and beard edges keyed strand by strand from the original gray backdrop) that fades into the canvas at the shoulders, lit from above so the body falls into shadow. No frame or box: a soft cobalt radial glow (`.hero-person::before`) sits behind the head, and the name overlaps the faded shoulders. Served as WebP with transparency; the JPEG fallback (also the social preview image) has the glow baked in. On phones it shrinks to 112px beside the name with a smaller glow, and the three roles stack.
 - **Step number:** 32px cobalt tile with a white number, echoing the logo mark.
 - **Question cards:** a three-column grid using subgrid, so numbers, headings and answers start on the same line in every card. Keep answers about the same length.
 - **Process step:** card with the number in a 40px left column.
 - **Header:** wordmark left, tagline right, no bar or border.
-- **Footer:** plain text in `--faint` on the canvas.
+- **Footer:** on the band. Two columns: legal disclaimer and copyright on the left in `--faint`; the "Closed to new requests." notice on the right (20px heading in `--text`, 15px body in `--muted`). On phones they stack with the notice first.
 
 ## Brand marks
 
